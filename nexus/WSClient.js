@@ -12,7 +12,7 @@ class WSClient {
 
 			this.board = board
 
-			// BIND CONTEXT 
+			// BIND CONTEXT
 			this.handleMsg = this.handleMsg.bind(this)
 
 			// INITIALIZE WS CONNECTION & ATTACH LISTENERS

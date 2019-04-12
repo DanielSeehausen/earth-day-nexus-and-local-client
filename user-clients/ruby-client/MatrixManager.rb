@@ -4,14 +4,12 @@ require 'json'
 class MatrixManager
   attr_reader :api_url
 
-  def initialize(id)
-    @id = id
+  def initialize
     @api_url = "http://localhost:3001"
   end
 
   def set_tile(hash)
     # Tested, working
-    hash[:id] = @id
     set_tile_url = "#{self.api_url}/set-tile"
     response = RestClient.post(set_tile_url, hash)
     JSON.parse(response)

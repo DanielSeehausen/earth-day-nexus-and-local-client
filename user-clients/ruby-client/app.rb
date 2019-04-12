@@ -1,11 +1,7 @@
-
-
 require 'pry-nav'
 require_relative "./MatrixManager.rb"
 
-team_id = "Jon"
-
-matrix = MatrixManager.new(team_id)
+matrix = MatrixManager.new
 #Code here!
 
 

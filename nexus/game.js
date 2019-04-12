@@ -1,4 +1,4 @@
-const config = require('./config.js') 
+const config = require('./config.js')
 const HTTPEndpoint = config.APIENDPOINT
 
 const WSClient = require('./WSClient.js')
@@ -37,13 +37,13 @@ class Game {
 			this.board[`${x}-${y}`] = color
 			y++
 			if (y === dimension) {
-				y = 0 
+				y = 0
 				x++
-			} 
+			}
 		}
 	}
 
-	convertBoard(){
+	convertBoard() {
 		let array = []
 
 		for (var key in this.board) {
@@ -55,12 +55,11 @@ class Game {
 		return array
 	}
 
-	writeTile(obj){
+	writeTile(obj) {
 		// console.log("UPDATING BOARD AT", obj)
 		const { x, y, hexStr } = obj
 		this.board[`${x}-${y}`] = hexStr
 	}
-
 
 }
 

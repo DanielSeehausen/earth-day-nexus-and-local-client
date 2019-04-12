@@ -1,6 +1,6 @@
 const fetch = require('node-fetch')
 
-const config = require('./config.js') 
+const config = require('./config.js')
 const HTTPEndpoint = config.APIENDPOINT
 
 class HTTPConn {
@@ -8,7 +8,7 @@ class HTTPConn {
 		this.prepareBoard = prepareBoard
 	}
 	getBoard() {
-		const route = `/board?id=${config.GROUPID}`
+		const route = `/board`
 		fetch(HTTPEndpoint + route)
 		.then(response => response.arrayBuffer())
 		.then(bufferData => {
@@ -17,8 +17,8 @@ class HTTPConn {
 		})
 	}
 
-	setTile(x, y, c, id) {
-			fetch(HTTPEndpoint + `/tile?x=${x}&y=${y}&c=${c}&id=${id}`, {
+	setTile(x, y, c) {
+			fetch(HTTPEndpoint + `/tile?x=${x}&y=${y}&c=${c}`, {
 				method: 'Post',
 				mode: 'no-cors',
 			})
